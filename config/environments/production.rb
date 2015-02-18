@@ -2,6 +2,7 @@ SistemaVyp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
+  config.force_ssl = true
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
