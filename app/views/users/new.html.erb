@@ -1,9 +1,9 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'Nuevo Usuario') %>
 <h1>Sign up</h1>
 <div class="row">
 <div class="span6 offset3">
 <%= form_for(@user) do |f| %>
-<%= render 'shared/error_messages' %>
+<%= render 'shared/users_error_messages' %>
 <%= f.label :name, "Nombre" %>
 <%= f.text_field :name %>
 <%= f.label :email %>
