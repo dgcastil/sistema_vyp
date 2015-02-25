@@ -1,0 +1,21 @@
+<h1>Generar Orden</h1>
+
+<form class="form-inline">
+<%= form_tag("/search", method: "get") do %>
+<%= label_tag(:q, "Nombre:") %>
+<%= text_field_tag(:q) %>
+<%= submit_tag("Buscar") %>
+<% end %>
+</form>
+
+<table class="table">
+	 <tr>
+    <th>Código</th>
+    <th>Nombre</th>
+    <th>Precio Venta</th>
+    <th>Precio Compra</th>
+    <th></th>
+    <th></th>
+    </tr>
+<%= render "selected_products", q: @q %>
+</table>

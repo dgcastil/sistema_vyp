@@ -1,16 +1,18 @@
 SistemaVyp::Application.routes.draw do
   
 
-  resources :products
 
 resources :products
 resources :users
 resources :sessions, only: [:new, :create, :destroy]
+resources :carts
+resources :order_items, only: [:create, :update, :destroy]
 
 root to: 'static_pages#home'
  match '/help',to: 'static_pages#help'
  match '/signup',to: 'users#new'
- 
+match '/orders', to: 'carts#new'
+match '/current_order', to: 'carts#show' 
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete
 
