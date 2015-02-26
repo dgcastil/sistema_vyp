@@ -1,4 +1,5 @@
-<% found_products.each do |product| %>
+<% if @found_products != nil%>
+<% @found_products.each do |product| %>
   <tr>
     <td><%= product.code %></td>
     <td><%= product.name %></td>

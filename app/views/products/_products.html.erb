@@ -1,0 +1,12 @@
+<% @products.each do |product| %>
+<tr>
+<td><%= product.code %></td>
+<td><%= product.name %></td>
+<td><%= product.buy_price %></td>
+<td><%= product.sell_price %></td>
+<td><%= link_to 'Mostrar', product, class: "btn btn-default" %></td>
+<td><%= link_to 'Editar', edit_product_path(product), class: "btn btn-default" %></td>
+<td><%= link_to 'Eliminar', product, confirm: 'Está seguro?', method: :delete, class: "btn btn-default" %></td>
+</tr>
+<% end %>
+

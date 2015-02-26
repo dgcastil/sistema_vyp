@@ -1,12 +1,9 @@
 class ProductsController < ApplicationController
   before_filter :signed_in_user
+  helper_method :sort_column, :sort_direction
   def index
-    @products = Product.all
+    @products = Product.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
     
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
-    end
   end
 
   # GET /products/1
@@ -84,6 +81,13 @@ class ProductsController < ApplicationController
       unless signed_in?
       store_location
       redirect_to signin_path, notice: "Por favor, ingrese sus credenciales" 
+    end
+    def sort_column
+      Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+  
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
   end
 end

@@ -1,0 +1,24 @@
+<h1>Generar Orden</h1>
+
+<form class="form-inline">
+ <%= form_tag "finder_controller/create" do%>
+  <%= label_tag :name %><br>
+  <%= text_field_tag :name %>
+  <%= submit_tag %>
+<% end %>
+ 
+</form>
+
+<table class="table">
+	 <tr>
+    <th>Código</th>
+    <th>Nombre</th>
+    <th>Precio Venta</th>
+    <th>Precio Compra</th>
+    <th></th>
+    <th></th>
+    </tr>
+<div id='ContentBody'>
+</div>
+
+</table>
