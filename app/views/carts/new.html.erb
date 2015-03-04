@@ -1,1 +1,27 @@
+<h1>Ordenes</h1>
+<%= form_tag orders_path, :method => 'get', :id => "products_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  </p>
 
+<table class="table">
+<tr>
+<th>Código</th>
+<th>Nombre</th>
+<th>Precio Venta</th>
+<th>Precio Compra</th>
+<th></th>
+<th></th>
+
+</tr>
+
+  <div id="products"><%= render 'selected_products', order_item: @order_item %></div>
+ 
+</table>
+<% end %>
+
+<div>
+<div class="shopping-cart">
+  <%= render "shopping_cart" %>
+</div>

@@ -1,6 +1,6 @@
 class OrderItem < ActiveRecord::Base
-
-  attr_accessible :product_references, :quantity, :unit_price
+  include ActiveModel::ForbiddenAttributesProtection
+  attr_accessible :product_references, :quantity# :unit_price
 
   belongs_to :product
   belongs_to :order
@@ -9,14 +9,14 @@ class OrderItem < ActiveRecord::Base
   validate :product_present
   validate :order_present
 
-  before_save :finalize
+ # before_save :finalize
 
 
-
+=begin
   def total_price
     unit_price * quantity
   end
-
+=end
 private
   def product_present
     if product.nil?
@@ -29,9 +29,11 @@ private
       errors.add(:order, "is not a valid order.")
     end
   end
-
+=begin
   def finalize
     self[:unit_price] = unit_price
     self[:total_price] = quantity * self[:unit_price]
   end
+=end
+
 end
