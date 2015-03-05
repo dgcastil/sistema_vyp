@@ -16,12 +16,12 @@
 
 </tr>
 
-  <div id="products"><%= render 'selected_products', order_item: @order_item %></div>
+  <div id="products"><%= render 'found_products', order_item: @order_item %></div>
  
 </table>
 <% end %>
 
 <div>
-<div class="shopping-cart">
-  <%= render "shopping_cart" %>
+<div id ="shopping" class="shopping_cart">
+  <%= render "shopping_cart"%>
 </div>

@@ -1,6 +1,6 @@
 class OrderItem < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
-  attr_accessible :product_references, :quantity# :unit_price
+  attr_accessible :product_id, :quantity# :unit_price
 
   belongs_to :product
   belongs_to :order

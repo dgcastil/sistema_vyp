@@ -1,8 +1,17 @@
 class OrderItemsController < ApplicationController
- def create
+  def create
+    flash.now[:alert] = "No se pudo "
     @order = current_order
-    @order_item = @order.order_items.new(order_item_params)
-    @order.save
+    @order_item = @order.order_items.new(:quantity => params[:order_item][:quantity],:product_id => params[:order_item][:product_id])
+    
+    respond_to do |format|
+      if @order.save
+        format.html{redirect_to orders_path}
+        format.js
+      else
+        flash.now[:alert] = "No se pudo guardar"
+      end
+    end
   end
 
   def update
