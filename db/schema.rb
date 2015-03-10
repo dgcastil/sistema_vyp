@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150222085254) do
+ActiveRecord::Schema.define(:version => 20150305033726) do
 
   create_table "order_items", :force => true do |t|
-    t.string   "product_references"
+    t.integer  "product_id"
     t.integer  "order_id"
-    t.integer  "unit_price"
     t.integer  "quantity"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"
+  add_index "order_items", ["product_id"], :name => "index_order_items_on_product_id"
 
   create_table "orders", :force => true do |t|
     t.string   "name"

@@ -1,1 +1,1 @@
-$("#products").html("<%= escape_javascript(render("found_products")) %>");
+$("#products").html("<%= escape_javascript(render template: 'order_items/new', :product => product) %>");

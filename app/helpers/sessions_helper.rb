@@ -19,6 +19,7 @@ module SessionsHelper
 	end
 	def sign_out
 		self.current_user = nil
+		session[:order_id]=nil
 		cookies.delete(:remember_token)
 	end
 	def redirect_back_or(default)

@@ -1,18 +1,25 @@
-<% if !@order_item.nil? && @order_item.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-    <% @order_item.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
 <% if @order_items.size == 0 %>
   <p class="text-center">
-    There are no items in your shopping cart.  Please and add some items to your cart.
+    No hay productos en la orden.
   </p>
 <% else %>
+  <table class="table table-bordered">
+<tr>
+<th>Código</th>
+<th>Nombre</th>
+<th>Precio Venta</th>
+<th>Precio Compra</th>
+<th>Cantidad</th>
+<th>Total Compra</th>
+<th>Total Venta</th>
+<th></th>
+<th></th>
+
+</tr>
+
   <% @order_items.each do |order_item| %>
-    <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
+
+    <%= render 'carts/cart_row', product: order_item.product, order_item: order_item %>
   <% end %>
+</table>
 <% end %>

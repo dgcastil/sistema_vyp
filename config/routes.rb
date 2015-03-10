@@ -4,13 +4,13 @@ resources :products
 resources :users
 resources :sessions, only: [:new, :create, :destroy]
 resources :carts
-resources :order_items, only: [:create, :update, :destroy]
+resources :order_items, only: [:new, :create, :update, :destroy]
 
 root to: 'static_pages#home'
  match '/help',to: 'static_pages#help'
  match '/signup',to: 'users#new'
 match '/orders', to: 'carts#new'
-match '/order_items', to: 'order_items#create'
+match '/order_items', to: 'order_items#new'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete
 

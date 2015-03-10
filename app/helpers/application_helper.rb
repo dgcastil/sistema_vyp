@@ -1,5 +1,6 @@
 module ApplicationHelper
 # Returns the full title on a per-page basis.
+
 	def full_title(page_title)
 		base_title = "Sistema de Ventas y Cotizaciones"
 		if page_title.empty?
@@ -9,7 +10,6 @@ module ApplicationHelper
 		end
 	end
 	
-
 	def sortable(column, title = nil)
 	  title ||= column.titleize
 	  css_class = column == sort_column ? "current #{sort_direction}" : nil

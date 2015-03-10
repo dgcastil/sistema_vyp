@@ -16,12 +16,17 @@
 
 </tr>
 
-  <div id="products"><%= render 'found_products', order_item: @order_item %></div>
+  <div id="products">
+<% @products.each do |product| %>
+<%= render template: 'order_items/new', :locals => { :product => product } %>
+<% end %>
+</div>
  
 </table>
 <% end %>
 
 <div>
-<div id ="shopping" class="shopping_cart">
-  <%= render "shopping_cart"%>
+<h2>Orden actual</h2>
+<div id="shopping_cart">
+  <%= render "shopping_cart", :locals => { :order_items => @order_items }%>
 </div>

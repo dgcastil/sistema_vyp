@@ -4,6 +4,7 @@ module CartsHelper
       Order.find(session[:order_id])
     else
       Order.new
+      
     end
   end
 end
