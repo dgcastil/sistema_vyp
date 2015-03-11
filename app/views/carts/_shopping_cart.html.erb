@@ -7,11 +7,14 @@
 <tr>
 <th>Código</th>
 <th>Nombre</th>
-<th>Precio Venta</th>
 <th>Precio Compra</th>
+<th>Precio Venta</th>
+
 <th>Cantidad</th>
 <th>Total Compra</th>
 <th>Total Venta</th>
+
+
 <th></th>
 <th></th>
 
@@ -22,4 +25,18 @@
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item %>
   <% end %>
 </table>
+<div>
+<h3>SubTotal compra: <%= @order.buy_subtotal%> </h3>
+
+<h3>SubTotal venta: <%= @order.sell_subtotal%> </h3>
+
+
+</div>
+<br />
+<div>
+<%= link_to 'Cotización', quotation_path, class: "btn btn-large btn-primary" %>
+<%= link_to 'Orden de venta', sell_order_path, class: "btn btn-large btn-primary" %>
+
+</div>
+
 <% end %>

@@ -2,17 +2,49 @@ class CartsController < ApplicationController
     before_filter :signed_in_user
 
 	def new
+  
 		@products = Product.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
-		@order_items=current_order.order_items
+		@order=current_order
+    @order_items=current_order.order_items
+
 	end
 
-private
+  def new_sell_order
+    @order=current_order
 
-  def signed_in_user
-      unless signed_in?
-      store_location
-      redirect_to signin_path, notice: "Por favor, ingrese sus credenciales" 
   end
-end
+
+  def new_quotation
+    @quotation=Quotation.new
+  end
+  def create_sell_order
+    @order=current_order
+
+
+  end
+
+  def create_quotation
+    @order=current_order
+    @quotation = Quotation.new(params[:quotation])
+    @quotation.order_items=@order.order_items
+    
+    if @quotation.save
+     
+     #flash[:success] = "Cotización generada"
+      session[:order_id]=nil
+      redirect_to orders_path
+    else
+      redirect_to quotation_path
+    end
+  end
+
+  private
+    
+    def signed_in_user
+        unless signed_in?
+        store_location
+        redirect_to signin_path, notice: "Por favor, ingrese sus credenciales" 
+    end
+  end
 
 end

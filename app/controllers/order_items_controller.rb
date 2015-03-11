@@ -3,13 +3,13 @@ class OrderItemsController < ApplicationController
   def new
   @order = current_order
   @order_item = @order.order_items.new
+  
   end
 
 
   def create
     
     @order = current_order
-   # @order_item = @order.order_items.new(:quantity => params[:order_item][:quantity],:product_id => params[:order_item][:product_id])
     @order_item = @order.order_items.new(order_item_params)
     
     

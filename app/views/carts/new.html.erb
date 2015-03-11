@@ -1,32 +1,27 @@
 <h1>Ordenes</h1>
 <%= form_tag orders_path, :method => 'get', :id => "products_search" do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Buscar", :name => nil %>
-  </p>
-
+<p>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Buscar", :name => nil %>
+</p>
+<div id="products">
 <table class="table">
 <tr>
 <th>Código</th>
 <th>Nombre</th>
-<th>Precio Venta</th>
 <th>Precio Compra</th>
+<th>Precio Venta</th>
+<th>Cantidad</th>
 <th></th>
-<th></th>
-
 </tr>
-
-  <div id="products">
 <% @products.each do |product| %>
-<%= render template: 'order_items/new', :locals => { :product => product } %>
-<% end %>
-</div>
- 
+<%= render template: "order_items/new", :locals => { :product => product } %>
+<% end %> 
 </table>
+</div>
 <% end %>
-
 <div>
 <h2>Orden actual</h2>
 <div id="shopping_cart">
-  <%= render "shopping_cart", :locals => { :order_items => @order_items }%>
+<%= render "shopping_cart", :locals => { :order_items => @order_items, :order => @order}%>
 </div>

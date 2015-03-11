@@ -1,1 +1,1 @@
-$("#shopping_cart").html("<%=escape_javascript(render partial: 'carts/shopping_cart', locals: { order_items: @order_items } ) %>");
+$("#shopping_cart").html("<%=escape_javascript(render partial: 'carts/shopping_cart', locals: { order_items: @order_items, order: @order } ) %>");

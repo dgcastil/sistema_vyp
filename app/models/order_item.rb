@@ -8,6 +8,14 @@ class OrderItem < ActiveRecord::Base
   validate :product_present
   #validate :order_present
 
+  def sell_total
+    product.sell_price*quantity
+  end
+
+  def buy_total
+    product.buy_price*quantity
+  end
+
   private
 
   def product_present
@@ -15,6 +23,7 @@ class OrderItem < ActiveRecord::Base
       errors.add(:product, "is not valid or is not active.")
     end
   end
+
 =begin
 
   def order_present
@@ -23,4 +32,6 @@ class OrderItem < ActiveRecord::Base
     end
   end
 =end
+
+
 end

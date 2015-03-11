@@ -11,6 +11,11 @@ root to: 'static_pages#home'
  match '/signup',to: 'users#new'
 match '/orders', to: 'carts#new'
 match '/order_items', to: 'order_items#new'
+match '/sell_order', to: 'carts#new_sell_order'
+match '/quotation', to: 'carts#new_quotation'
+
+match '/create_sell_order', to: 'carts#create_sell_order'
+match '/create_quotation', to: 'carts#create_quotation'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete
 
