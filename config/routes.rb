@@ -4,16 +4,18 @@ resources :products
 resources :users
 resources :sessions, only: [:new, :create, :destroy]
 resources :carts
+resources :pdf
 resources :order_items, only: [:new, :create, :update, :destroy]
 
 root to: 'static_pages#home'
- match '/help',to: 'static_pages#help'
- match '/signup',to: 'users#new'
+match '/help',to: 'static_pages#help'
+match '/signup',to: 'users#new'
 match '/orders', to: 'carts#new'
 match '/order_items', to: 'order_items#new'
+match '/pdf', to: 'pdf#new'
+match '/create_pdf', to: 'pdf#create'
 match '/sell_order', to: 'carts#new_sell_order'
 match '/quotation', to: 'carts#new_quotation'
-
 match '/create_sell_order', to: 'carts#create_sell_order'
 match '/create_quotation', to: 'carts#create_quotation'
 match '/signin', to: 'sessions#new'

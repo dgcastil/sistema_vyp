@@ -1,10 +1,9 @@
 <h1>Ordenes</h1>
-<%= form_tag orders_path, :method => 'get', :id => "products_search" do %>
+<%= form_tag orders_path, :method => 'get' do %>
 <p>
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Buscar", :name => nil %>
 </p>
-<div id="products">
 <table class="table">
 <tr>
 <th>Código</th>
@@ -14,12 +13,14 @@
 <th>Cantidad</th>
 <th></th>
 </tr>
-<% @products.each do |product| %>
-<%= render template: "order_items/new", :locals => { :product => product } %>
-<% end %> 
+<%= will_paginate @products%>
+<form accept-charset="UTF-8" action="/order_items" class="new_order_item" data-remote="true" id="new_order_item" method="post"></form>
+<div id="found_products"><%= render 'found_products' %></div>
+
 </table>
-</div>
+
 <% end %>
+
 <div>
 <h2>Orden actual</h2>
 <div id="shopping_cart">

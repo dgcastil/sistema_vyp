@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+    
+
     before_filter :signed_in_user
 
 	def new
@@ -27,12 +29,16 @@ class CartsController < ApplicationController
     @order=current_order
     @quotation = Quotation.new(params[:quotation])
     @quotation.order_items=@order.order_items
-    
+    current_order.destroy
+
+
     if @quotation.save
-     
-     #flash[:success] = "Cotización generada"
+
+      #flash[:success] = "Cotización generada"
       session[:order_id]=nil
-      redirect_to orders_path
+      #redirect_to pdf_path @quotation
+
+      render 'pdf/new'
     else
       redirect_to quotation_path
     end
