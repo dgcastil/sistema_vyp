@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {margin: 0px;padding: 0px; width: auto;}
 
-#page_1 {position:relative; overflow: hidden;margin: 0px;padding: 0px;border: none;width: 786px;}
+
+#page_1 {margin: 0px; width: 756px;padding: 0px;border: none;width: auto;}
 
 #page_1 #dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:739px;height:663px;}
 
-#page_1 #dimg1 #img1 {width:739px;height:663px;}
+#page_1 #dimg1 #img1 {width:100px;height:100px;}
 
 
 
@@ -17,7 +17,7 @@ body {margin: 0px;padding: 0px; width: auto;}
 
 .ft0{font: bold 13px 'Tahoma';color: #ffffff;line-height: 16px;}
 .ft1{font: 1px 'Tahoma';line-height: 1px;}
-.ft2{font: bold 8px 'Tahoma';line-height: 10px;}
+.ft2{font: bold 8px 'Verdana';line-height: 10px;}
 .ft3{font: bold 8px 'Tahoma';line-height: 9px;}
 .ft4{font: 9px 'Calibri';text-decoration: underline;color: #0000ff;line-height: 10px;}
 .ft5{font: 1px 'Tahoma';line-height: 3px;}
@@ -41,10 +41,10 @@ body {margin: 0px;padding: 0px; width: auto;}
 .ft23{font: bold 9px 'Tahoma';text-decoration: underline;line-height: 11px;}
 .ft24{font: bold 8px 'Calibri';line-height: 9px;}
 
-.p0{text-align: left;padding-left: 326px;margin-top: 2px;margin-bottom: 0px;}
+.p0{text-align: left;padding-left: 326px;margin-top: 2px;margin-bottom: 0px;background: #7f7f7f;}
 .p1{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
-.p2{text-align: left;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
-.p3{text-align: left;padding-left: 15px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p2{text-align: left;padding-left: 7px;margin-top: 0px;margin-right: auto; margin-bottom: 0px;white-space: nowrap;}
+.p3{text-align: left;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;margin-right: auto}
 .p4{text-align: right;padding-right: 89px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p5{text-align: center;padding-left: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p6{text-align: left;padding-left: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
@@ -79,9 +79,9 @@ body {margin: 0px;padding: 0px; width: auto;}
 
 .td0{padding: 0px;margin: 0px;width: 55px;vertical-align: bottom;}
 .td1{border-right: #000000 1px solid;padding: 0px;margin: 0px;width: 52px;vertical-align: bottom;}
-.td2{border-top: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 66px;vertical-align: bottom;}
+.td2{border-top: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;vertical-align: bottom;}
 .td3{border-right: #000000 1px solid;border-top: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 12px;vertical-align: bottom;}
-.td4{border-right: #000000 1px solid;border-top: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 254px;vertical-align: bottom;}
+.td4{border-right: #000000 1px solid;border-top: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;vertical-align: bottom;}
 .td5{border-right: #000000 1px solid;border-top: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 81px;vertical-align: bottom;}
 .td6{border-right: #000000 1px solid;border-top: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 138px;vertical-align: bottom;}
 .td7{padding: 0px;margin: 0px;width: 75px;vertical-align: bottom;}
@@ -177,7 +177,7 @@ body {margin: 0px;padding: 0px; width: auto;}
 .td97{border-left: #000000 1px solid;padding: 0px;margin: 0px;width: 254px;vertical-align: bottom;}
 
 .tr0{height: 13px;}
-.tr1{height: 11px;}
+.tr1{height: 11px; width: 60px; border: 1px solid black}
 .tr2{height: 12px;}
 .tr3{height: 14px;}
 .tr4{height: 17px;}
@@ -192,5 +192,5 @@ body {margin: 0px;padding: 0px; width: auto;}
 .tr13{height: 16px;}
 .tr14{height: 7px;}
 
-.t0{width: 739px;margin-top: 24px;font: bold 8px 'Tahoma';}
+.t0{border: 2px solid black;margin-top: 24px; margin-left: 250px;font: bold 8px 'Verdana'}
 .t1{width: 739px;font: 9px 'Tahoma';}

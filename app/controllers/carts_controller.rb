@@ -11,31 +11,20 @@ class CartsController < ApplicationController
 
 	end
 
-  def new_sell_order
-    @order=current_order
-
-  end
 
   def new_quotation
-    @quotation=Quotation.new
-  end
-  def create_sell_order
     @order=current_order
-
-
   end
+  
 
   def create_quotation
     @order=current_order
-    @quotation = Quotation.new(params[:quotation])
-    @quotation.order_items=@order.order_items
-    current_order.destroy
+    @order.update_attributes(params[:order])
 
-
-    if @quotation.save
+    if @order.save
 
       #flash[:success] = "Cotización generada"
-      session[:order_id]=nil
+    
       #redirect_to pdf_path @quotation
 
       render 'pdf/new'
