@@ -9,7 +9,6 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'strong_parameters'
 gem 'pdfkit', '~> 0.6.2'
 gem 'unicorn'
-gem 'wkhtmltopdf-heroku'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -37,6 +36,8 @@ end
 
 group :production do
 	gem 'pg', '0.12.2'
+
+	gem 'wkhtmltopdf-heroku'
 end
 
 # To use ActiveModel has_secure_password
