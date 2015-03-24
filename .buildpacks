@@ -1,3 +1,2 @@
-https://github.com/ddollar/heroku-buildpack-apt.git
-https://github.com/heroku/heroku-buildpack-ruby.git
-https://github.com/a2ikm/heroku-buildpack-libjpeg62.git
+https://github.com/rafaelp/heroku-buildpack-wkhtmltopdf#0.12.2.1
+https://github.com/heroku/heroku-buildpack-ruby
