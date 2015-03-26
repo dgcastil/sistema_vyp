@@ -4,18 +4,16 @@
 
 
 
-#page_1 {margin: 0px; width: 756px;padding: 0px;border: none;width: auto;}
+div#page_1 {position: relative; margin-top: 50px; width: 756px;padding: 0px;border: none;}
 
-#page_1 #dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:739px;height:663px;}
-
-#page_1 #dimg1 #img1 {width:100px;height:100px;}
+div#dimg1 {position: absolute;width:40px;height:50px;margin-top: 24px; margin-left: 0px}
 
 
 
 
 .dclr {clear:both;float:none;height:1px;margin:0px;padding:0px;overflow:hidden;}
 
-.ft0{font: bold 13px 'Tahoma';color: #ffffff;line-height: 16px;}
+.ft0{font: bold 18px 'Verdana';color: #ffffff;line-height: 16px;}
 .ft1{font: 1px 'Tahoma';line-height: 1px;}
 .ft2{font: bold 8px 'Verdana';line-height: 10px;}
 .ft3{font: bold 8px 'Tahoma';line-height: 9px;}
@@ -192,5 +190,5 @@
 .tr13{height: 16px;}
 .tr14{height: 7px;}
 
-.t0{border: 2px solid black;margin-top: 24px; margin-left: 250px;font: bold 8px 'Verdana'}
+.t0{position: absolute; border: 2px solid black;margin-top: 24px; margin-left: 150px;font: bold 10px 'Verdana'}
 .t1{width: 739px;font: 9px 'Tahoma';}
