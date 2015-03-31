@@ -77,11 +77,7 @@ class ProductsController < ApplicationController
     end
   end
   private
-    def signed_in_user
-      unless signed_in?
-      store_location
-      redirect_to signin_path, notice: "Por favor, ingrese sus credenciales" 
-    end
+    
     def sort_column
       Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
     end
@@ -90,4 +86,4 @@ class ProductsController < ApplicationController
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
   end
-end
+

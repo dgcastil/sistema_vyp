@@ -33,13 +33,4 @@ class CartsController < ApplicationController
     end
   end
 
-  private
-    
-    def signed_in_user
-        unless signed_in?
-        store_location
-        redirect_to signin_path, notice: "Por favor, ingrese sus credenciales" 
-    end
-  end
-
 end

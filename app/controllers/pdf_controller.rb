@@ -1,5 +1,6 @@
 class PdfController < ApplicationController
 
+	before_filter :signed_in_user
 	def new
 
     	@order = current_order
@@ -11,7 +12,7 @@ class PdfController < ApplicationController
 	def create
 		@order = current_order
 		session[:order_id]=nil
-	    html = render_to_string(:layout => false , :template => "pdf/_pdf.html.erb", :formats => :html)
+	    html = render_to_string(:layout => false , :template => "pdf/_quotation.html.erb", :formats => :html)
 	    # Create a new kit and define page size to be US letter
 	    kit = PDFKit.new(html, :page_size => 'Letter')
 	    kit.stylesheets << "#{Rails.root}/public/assets/application.css"
