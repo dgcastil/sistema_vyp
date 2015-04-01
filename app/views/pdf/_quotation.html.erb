@@ -23,8 +23,8 @@
 	
 
 <TR>
-	<TD class="tr1 td0"><P class="p2 ft2 grad">NOMBRE :</P></TD>
-	<TD class="tr1 td6"><P class="p4 ft2">COMERCIAL V&P LTDA.</P></TD>
+	<TD class="td0"><P class="p2 ft2 grad">NOMBRE :</P></TD>
+	<TD class="td6"><P class="p4 ft2">COMERCIAL V&P LTDA.</P></TD>
 	
 </TR>
 <TR>
@@ -76,497 +76,106 @@
 	
 </TR>
 <TR>
-	<TD class="td0"><P class="p2 ft3 grad ">Nombre :</P></TD>
+	<TD class="td1"><P class="p2 ft3 grad ">Nombre :</P></TD>
 
-	<TD class="td6"><P class="p6 ft3"><%=@order.name%></P></TD>
-	<TD class="td0"><P class="p2 ft3 grad">Fecha :</P></TD>
-	<TD class="td6"><P class="p6 ft3">fecha</P></TD>
+	<TD class="td2"><P class="p6 ft3"><%=@order.name%></P></TD>
+	<TD class="td1"><P class="p2 ft3 grad">Fecha :</P></TD>
+	<TD class="td2"><P class="p6 ft3">fecha</P></TD>
 </TR>
 <TR>
-	<TD class="td0"><P class="p2 ft3 grad">R.U.T :</P></TD>
-	<TD class="td6"><P class="p6 ft3"><%=@order.rut%></P></TD>
-	<TD class="td0"><P class="p2 ft3 grad">Condición :</P></TD>
-	<TD class="td6"><P class="p6 ft3"><%=@order.sell_condition%></P></TD>
+	<TD class="td1"><P class="p2 ft3 grad">R.U.T :</P></TD>
+	<TD class="td2"><P class="p6 ft3"><%=@order.rut%></P></TD>
+	<TD class="td1"><P class="p2 ft3 grad">Condición :</P></TD>
+	<TD class="td2"><P class="p6 ft3"><%=@order.sell_condition%></P></TD>
 </TR>
 <TR>
-	<TD class="td0"><P class="p2 ft3 grad">Dirección :</P></TD
-		<TD class="td6"><P class="p6 ft3"><%=@order.address%></P></TD>>
-	<TD class="td0"><P class="p2 ft3 grad">Atte. A :</P></TD>
-	<TD class="td6"><P class="p6 ft3"><%=@order.name%></P></TD>
+	<TD class="td1"><P class="p2 ft3 grad">Dirección :</P></TD>
+	<TD class="td2"><P class="p6 ft3"><%=@order.address%></P></TD>
+	<TD class="td1"><P class="p2 ft3 grad">Atte. A :</P></TD>
+	<TD class="td2"><P class="p6 ft3"><%=@order.name%></P></TD>
 </TR>
 <TR>
-	<TD class="td0"><P class="p2 ft3 grad">Teléfono :</P></TD>
+	<TD class="td1"><P class="p2 ft3 grad">Teléfono :</P></TD>
 
-	<TD class="td6"><P class="p6 ft3"><%=@order.telephone%></P></TD>
+	<TD class="td2"><P class="p6 ft3"><%=@order.telephone%></P></TD>
 	
 	
 </TR>
 <TR>
-	<TD class="td0"><P class="p2 ft2 grad">E-mail :</P></TD>
+	<TD class="td1"><P class="p2 ft3 grad">E-mail :</P></TD>
 	
-	<TD class="td6"><P class="p6 ft2"><%=@order.email%></P></TD>
+	<TD class="td2"><P class="p6 ft3"><%=@order.email%></P></TD>
+	
 	</TR>
 
 </table>
-<table class="t3">
+<table class="t3 table table-bordered">
 <TR>
-	<TD class="tr8 td0"><P class="p2 ft10">Codigo</P></TD>
-	<TD class="tr8 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr8 td6"><P class="p16 ft9">DESCRIPCION</P></TD>
-	<TD class="tr8 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr8 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr8 td3"><P class="p17 ft11">CANTIDAD</P></TD>
-	<TD class="tr8 td4"><P class="p18 ft11">PRECIO UNIT.</P></TD>
-	<TD class="tr8 td5"><P class="p15 ft11">TOTAL</P></TD>
+	<TD class="td3"><P class="p3 ft5">Codigo</P></TD>
+	<TD class="td4"><P class="p3 ft5">DESCRIPCION</P></TD>
+	<TD class="td3"><P class="p3 ft5">CANTIDAD</P></TD>
+	<TD class="td3"><P class="p3 ft5">PRECIO UNIT.</P></TD>
+	<TD class="td3"><P class="p3 ft5">TOTAL</P></TD>
 </TR>
+<% @order.order_items.each do |order_item| %>
+<tr class="tr2">
+
+    <TD class="td5"><P class="p5 ft5"><%= order_item.product.code %></P></TD>
+	<TD class="td5"><P class="p5 ft6"><%= order_item.product.name%></P></TD>
+	<TD class="td5"><P class="p5 ft6"><%= order_item.quantity%></P></TD>
+	<TD class="td5"><P class="p5 ft6"><%= order_item.product.sell_price%></P></TD>
+	<TD class="td5"><P class="p5 ft6"><%= order_item.sell_total%></P></TD>
+</tr>
+<% end %> 
 <TR>
-	<TD class="tr10 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr10 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr10 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr10 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr10 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr10 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr10 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr10 td5"><P class="p19 ft8">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr11 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr11 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr11 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr11 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr11 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr11 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr11 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr11 td5"><P class="p19 ft13">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p19 ft12">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
+	
 	<TD colspan=2 rowspan=2 class="tr12 td12"><P class="p20 ft14">"Descuentos ya aplicados"</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft5">-</P></TD>
+		
+</TR>
+
+<TR>
+	
+	<TD colspan=5>
+	
 </TR>
 <TR>
-	<TD class="tr13 td0"><P class="p0 ft15">&nbsp;</P></TD>
-	<TD class="tr13 td1"><P class="p0 ft15">&nbsp;</P></TD>
-	<TD class="tr13 td8"><P class="p0 ft15">&nbsp;</P></TD>
-	<TD class="tr13 td3"><P class="p0 ft15">&nbsp;</P></TD>
-	<TD class="tr13 td4"><P class="p0 ft15">&nbsp;</P></TD>
-	<TD rowspan=2 class="tr3 td5"><P class="p19 ft5">-</P></TD>
+	<TD colspan=2>
+	<TD colspan=2 class="tr9 td3"><P class="p22 ft11">Neto</P></TD>
+<TD class="tr6 td4"><P class="p0 ft5">34543</P></TD>
+</TR>
+	
+<TR>
+	<TD colspan=2>
+	<TD colspan=2 class="tr9 td3"><P class="p22 ft11">Descuento 0%</P></TD>
+<TD class="tr6 td4"><P class="p0 ft5">34543</P></TD>
+</TR>
+
+<TR>
+	
+	<TD colspan=2>
+	<TD colspan=2 class="tr6 td3"><P class="p22 ft11">Neto Final</P></TD>
+	<TD class="tr6 td4"><P class="p0 ft5">34543</P></TD>
+	
 </TR>
 <TR>
-	<TD class="tr14 td0"><P class="p0 ft16">&nbsp;</P></TD>
-	<TD class="tr14 td1"><P class="p0 ft16">&nbsp;</P></TD>
-	<TD class="tr14 td6"><P class="p0 ft16">&nbsp;</P></TD>
-	<TD class="tr14 td7"><P class="p0 ft16">&nbsp;</P></TD>
-	<TD class="tr14 td8"><P class="p0 ft16">&nbsp;</P></TD>
-	<TD class="tr14 td3"><P class="p0 ft16">&nbsp;</P></TD>
-	<TD class="tr14 td4"><P class="p0 ft16">&nbsp;</P></TD>
+	
+	<TD colspan=2 >
+	
+	<TD colspan=2 class="tr9 td3"><P class="p22 ft18">IVA 19%</P></TD>
+	
+	<TD class="tr9 td5"><P class="p19 ft5">3544</P></TD>
 </TR>
 <TR>
-	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td3"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr2 td5"><P class="p19 ft5">-</P></TD>
-</TR>
-<TR>
-	<TD colspan=3 rowspan=2 class="tr15 td13"><P class="p21 ft17">Emitir Documento a Nombre de: Comercial V&P Ltda.</P></TD>
-	<TD class="tr1 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr1 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr1 td3"><P class="p22 ft18">Neto</P></TD>
-	<TD class="tr1 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr1 td5"><P class="p0 ft0">&nbsp;</P></TD>
-</TR>
-<TR>
-	<TD class="tr16 td7"><P class="p0 ft19">&nbsp;</P></TD>
-	<TD class="tr16 td8"><P class="p0 ft19">&nbsp;</P></TD>
-	<TD rowspan=2 class="tr9 td3"><P class="p22 ft11">Descuento</P></TD>
-	<TD rowspan=2 class="tr9 td4"><P class="p23 ft11">0%</P></TD>
-	<TD rowspan=2 class="tr9 td5"><P class="p19 ft5">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr17 td0"><P class="p0 ft20">&nbsp;</P></TD>
-	<TD class="tr17 td1"><P class="p0 ft20">&nbsp;</P></TD>
-	<TD class="tr17 td6"><P class="p0 ft20">&nbsp;</P></TD>
-	<TD class="tr17 td7"><P class="p0 ft20">&nbsp;</P></TD>
-	<TD class="tr17 td8"><P class="p0 ft20">&nbsp;</P></TD>
-</TR>
-<TR>
-	<TD class="tr6 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr6 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr6 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr6 td7"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr6 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr6 td3"><P class="p22 ft11">Neto Final</P></TD>
-	<TD class="tr6 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr6 td5"><P class="p19 ft5">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr9 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr9 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD colspan=2 class="tr9 td12"><P class="p24 ft11">NOMBRE DEL VENDEDOR</P></TD>
-	<TD class="tr9 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr9 td3"><P class="p22 ft18">IVA</P></TD>
-	<TD class="tr9 td4"><P class="p23 ft18">19%</P></TD>
-	<TD class="tr9 td5"><P class="p19 ft5">-</P></TD>
-</TR>
-<TR>
-	<TD class="tr3 td0"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td1"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td6"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td7"><P class="p25 ft21">Com. V&P Ltda.</P></TD>
-	<TD class="tr3 td8"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td3"><P class="p22 ft11">Total</P></TD>
-	<TD class="tr3 td4"><P class="p0 ft0">&nbsp;</P></TD>
-	<TD class="tr3 td5"><P class="p26 ft9">-</P></TD>
+		<TD colspan=2 >
+
+	<TD colspan=2 class="tr3 td3"><P class="p22 ft11">Total: </P></TD>
+	<TD class="tr3 td4"><P class="p0 ft5">42324</P></TD>
+	
 </TR>
 </TABLE>
+<div  class="tr15 td13"><P class="p21 ft17">Emitir Documento a Nombre de: Comercial V&P Ltda.</P></div>
+<P class="p24 ft11">NOMBRE DEL VENDEDOR</P>
+<P class="p25 ft21">Com. V&P Ltda.</P>
 <P class="p27 ft22">Celular: 55614207</P>
 <P class="p28 ft9">Este documento no tiene validez como factura.</P>
 <P class="p28 ft9">Valides de Cotizacion es de 5 dias.</P>
