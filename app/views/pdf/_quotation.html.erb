@@ -13,7 +13,7 @@
 
 
 
-<div class="div0" ><P class="p1 ft1 grad">COTIZACIÓN Nº <%= @order.id%></P></div>
+<div class="div0 grad" ><P class="p1 ft1">COTIZACIÓN Nº <%= @order.id%></P></div>
 <DIV class="img1">
 	<%= image_tag  "https://sistemavyp.herokuapp.com/assets/image001.png" %>
 </DIV>
@@ -23,22 +23,22 @@
 	
 
 <TR>
-	<TD class="td0"><P class="p2 ft2 grad">NOMBRE :</P></TD>
+	<TD class="td0 grad"><P class="p2 ft2">NOMBRE :</P></TD>
 	<TD class="td6"><P class="p4 ft2">COMERCIAL V&P LTDA.</P></TD>
 	
 </TR>
 <TR>
-	<TD class="td0"><P class="p2 ft2 grad">R.U.T. :</P></TD>
+	<TD class="td0 grad"><P class="p2 ft2">R.U.T. :</P></TD>
 	<TD class="td6"><P class="p4 ft2">76.524.770-5</P></TD>
 	
 </TR>
 <TR>
-	<TD  class="td0"><P class="p2 ft2 grad">DIRECCIÒN :</P></TD>
+	<TD  class="td0 grad"><P class="p2 ft2">DIRECCIÒN :</P></TD>
 	<TD class="td6"><P class="p4 ft2">LOS ABEDULES # 2145 B 3 D. 303</P></TD>
 	
 </TR>
 <TR>
-	<TD  class="td0"><P class="p2 ft2 grad">GIRO:</P></TD>
+	<TD  class="td0 grad"><P class="p2 ft2">GIRO:</P></TD>
 	<TD class="td6"><P class="p5 ft2">COM. E INST. DE EQUIPOS Y SISTEMAS CONTRA INCEDIOS Y SEGURIDAD</P></TD>
 	
 	
@@ -46,22 +46,22 @@
 
 
 <TR>
-	<TD class="td0"><P class="p2 ft2 grad">Ciudad :</P></TD>
+	<TD class="td0 grad"><P class="p2 ft2">Ciudad :</P></TD>
 	<TD class="td6"><P class="p4 ft2">OSORNO</P></TD>
 
 </TR>
 </table>
 <table class="t2">
 	<tr>
-		<TD colspan=2><P class="p3 ft2 grad">www.vypltda.cl</P></TD>
+		<TD colspan=2 class="grad"><P class="p3 ft2">www.vypltda.cl</P></TD>
 	</tr>
 	<TR>
 
-	<TD class="tr1 td0"><P class="p2 ft2 grad">TELEFONO :</P></TD>
-	<TD class="tr1 td6"><P class="p4 ft2">64 2 32 1112</P></TD>
+	<TD class="td0 grad"><P class="p2 ft2">TELEFONO :</P></TD>
+	<TD class="td6 grad"><P class="p4 ft2">64 2 32 1112</P></TD>
 </TR>
 	<tr>
-		<TD class="td0"><P class="p2 ft2 grad">E-MAIL:</P></TD>
+		<TD class="td0 grad"><P class="p2 ft2">E-MAIL:</P></TD>
 		<TD  class="td6"><P class="p4 ft2">CORREO DEL VENDEDOR</P></TD>
 
 </tr>
@@ -70,46 +70,46 @@
 <table class="t1">
 <TR>
 
-	<TD colspan=2 ><P class="p3 ft2 grad">CLIENTE</P></TD>
+	<TD colspan=2 class="grad2"><P class="p3 ft2">CLIENTE</P></TD>
 
-	<TD colspan=2 ><P class="p3 ft2 grad">Entrega</P></TD>
+	<TD colspan=2 class="grad2"><P class="p3 ft2">Entrega</P></TD>
 	
 </TR>
 <TR>
-	<TD class="td1"><P class="p2 ft3 grad ">Nombre :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">Nombre :</P></TD>
 
 	<TD class="td2"><P class="p6 ft3"><%=@order.name%></P></TD>
-	<TD class="td1"><P class="p2 ft3 grad">Fecha :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">Fecha :</P></TD>
 	<TD class="td2"><P class="p6 ft3">fecha</P></TD>
 </TR>
 <TR>
-	<TD class="td1"><P class="p2 ft3 grad">R.U.T :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">R.U.T :</P></TD>
 	<TD class="td2"><P class="p6 ft3"><%=@order.rut%></P></TD>
-	<TD class="td1"><P class="p2 ft3 grad">Condición :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">Condición :</P></TD>
 	<TD class="td2"><P class="p6 ft3"><%=@order.sell_condition%></P></TD>
 </TR>
 <TR>
-	<TD class="td1"><P class="p2 ft3 grad">Dirección :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">Dirección :</P></TD>
 	<TD class="td2"><P class="p6 ft3"><%=@order.address%></P></TD>
-	<TD class="td1"><P class="p2 ft3 grad">Atte. A :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">Atte. A :</P></TD>
 	<TD class="td2"><P class="p6 ft3"><%=@order.name%></P></TD>
 </TR>
 <TR>
-	<TD class="td1"><P class="p2 ft3 grad">Teléfono :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">Teléfono :</P></TD>
 
 	<TD class="td2"><P class="p6 ft3"><%=@order.telephone%></P></TD>
 	
 	
 </TR>
 <TR>
-	<TD class="td1"><P class="p2 ft3 grad">E-mail :</P></TD>
+	<TD class="td1 grad2"><P class="p2 ft3">E-mail :</P></TD>
 	
 	<TD class="td2"><P class="p6 ft3"><%=@order.email%></P></TD>
 	
 	</TR>
 
 </table>
-<table class="t3 table table-bordered">
+<table class="t3">
 <TR>
 	<TD class="td3"><P class="p3 ft5">Codigo</P></TD>
 	<TD class="td4"><P class="p3 ft5">DESCRIPCION</P></TD>
@@ -120,22 +120,36 @@
 <% @order.order_items.each do |order_item| %>
 <tr class="tr2">
 
-    <TD class="td5"><P class="p5 ft5"><%= order_item.product.code %></P></TD>
-	<TD class="td5"><P class="p5 ft6"><%= order_item.product.name%></P></TD>
-	<TD class="td5"><P class="p5 ft6"><%= order_item.quantity%></P></TD>
-	<TD class="td5"><P class="p5 ft6"><%= order_item.product.sell_price%></P></TD>
-	<TD class="td5"><P class="p5 ft6"><%= order_item.sell_total%></P></TD>
+    <TD class="td5"><P class="p7 ft6"><%= order_item.product.code %></P></TD>
+	<TD class="td7"><P class="p5 ft6"><%= order_item.product.name%></P></TD>
+	<TD class="td5"><P class="p7 ft6"><%= order_item.quantity%></P></TD>
+	<TD class="td5"><P class="p7 ft6"><%= order_item.product.sell_price%></P></TD>
+	<TD class="td5"><P class="p7 ft6"><%= order_item.sell_total%></P></TD>
 </tr>
 <% end %> 
+  
+<% $i =30%>
+<% while $i - @order.order_items.count>0  do %>
+<tr class="tr2">
+
+    <TD class="td5">
+    <TD class="td7">
+    <TD class="td5">
+    <TD class="td5">
+    <TD class="td5">	
+</tr>
+<% $i -=1%>
+<% end %> 
+
 <TR>
 	
-	<TD colspan=2 rowspan=2 class="tr12 td12"><P class="p20 ft14">"Descuentos ya aplicados"</P></TD>
+	<TD colspan=2 class="tr12 td12"><P class="p20 ft14">"Descuentos ya aplicados"</P></TD>
 		
 </TR>
 
 <TR>
 	
-	<TD colspan=5>
+	<TD colspan=5 class="grad2 tr3">
 	
 </TR>
 <TR>
