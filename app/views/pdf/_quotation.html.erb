@@ -62,7 +62,7 @@
 </TR>
 	<tr>
 		<TD class="td0 grad"><P class="p2 ft2">E-MAIL:</P></TD>
-		<TD  class="td6"><P class="p4 ft2">CORREO DEL VENDEDOR</P></TD>
+		<TD  class="td6"><P class="p4 ft2"><%= current_user.email%></P></TD>
 
 </tr>
 </table>	
@@ -163,20 +163,20 @@
 <TR>
 	<TD colspan=2>
 	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">Neto</P></TD>
-<TD class="td8"><P class="p7 ft5">34543</P></TD>
+<TD class="td8"><P class="p7 ft5"><%= @order.sell_subtotal%></P></TD>
 </TR>
 	
 <TR>
 	<TD colspan=2>
-	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">Descuento 0%</P></TD>
-<TD class="td8"><P class="p7 ft5">34543</P></TD>
+	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">Descuento <%= @order.discount%>%</P></TD>
+<TD class="td8"><P class="p7 ft5"><%= @order.order_discount%></P></TD>
 </TR>
 
 <TR>
 	
 	<TD colspan=2>
 	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">Neto Final</P></TD>
-	<TD class="td8"><P class="p7 ft5">34543</P></TD>
+	<TD class="td8"><P class="p7 ft5"><%= @order.subtotal_after_discount%></P></TD>
 	
 </TR>
 <TR>
@@ -185,13 +185,13 @@
 	
 	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">IVA 19%</P></TD>
 	
-	<TD class="td8" ><P class="p7 ft5">3544</P></TD>
+	<TD class="td8" ><P class="p7 ft5"><%= @order.tax%></P></TD>
 </TR>
 <TR>
 		<TD colspan=2 >
 
 	<TD colspan=2 class="td8 grad2"><P class="p22 ft5">Total: </P></TD>
-	<TD class="td8" ><P class="p7 ft5">42324</P></TD>
+	<TD class="td8" ><P class="p7 ft5"><%= @order.total%></P></TD>
 	
 </TR>
 </TABLE>
