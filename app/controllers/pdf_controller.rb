@@ -4,7 +4,6 @@ class PdfController < ApplicationController
 	def new
 
     	@order = current_order
-    	
     
 
 	end

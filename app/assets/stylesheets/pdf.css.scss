@@ -17,7 +17,11 @@
   background: linear-gradient(blue, white); /* Standard syntax */
 }
 .div0{height: 26px;}
-.div1{height: 26px;width:1000px;position:absolute;margin-top:240px;}
+.div2{position: absolute;margin-top:635px; margin-left:0px;}
+.div3{position: absolute;margin-top:700px; margin-left:400px;text-align: center;}
+
+.div4{position: absolute;margin-top:750px; margin-left:0px;text-align: center;}
+
 .ft0{font: 1px 'Tahoma';line-height: 1px;}
 .ft1{font: bold 24px 'Tahoma';color: #ffffff;line-height: 15px;}
 .ft2{font: italic bold 18px 'Tahoma';color: #002060}
@@ -25,17 +29,19 @@
 .ft4{font: 12px 'Calibri';text-decoration: underline;color: #002060;line-height: 14px;}
 .ft5{font: 12px 'Tahoma';color: #002060;}
 .ft6{font: 12px 'Tahoma';color: black;line-height: 12px;}
-.ft7{font: italic bold 9px 'Tahoma';color: #002060;line-height: 10px;}
-.ft8{font: 9px 'Tahoma';color: #002060;line-height: 10px;}
-.ft9{font: bold 9px 'Tahoma';color: #002060;line-height: 11px;}
+.ft7{font: bold 14px 'Tahoma';color: #002060;line-height: 10px;}
+.ft8{font: bold 14px 'Tahoma';color: #ff0000;line-height: 10px;}
+
+.ft9{font: bold 12px 'Tahoma';color: #002060;line-height: 11px;}
+
 .ft10{font: bold 9px 'Tahoma';color: #002060;line-height: 10px;}
-.ft11{font: bold 8px 'Tahoma';color: #002060;line-height: 10px;}
+
 .ft12{font: 9px 'Tahoma';line-height: 11px;}
 .ft13{font: 9px 'Tahoma';line-height: 10px;}
 .ft14{font: 15px 'Calibri Light';color: #ff0000;line-height: 18px;}
 .ft15{font: 1px 'Tahoma';line-height: 10px;}
 .ft16{font: 1px 'Tahoma';line-height: 5px;}
-.ft17{font: bold 8px 'Tahoma';color: #ff0000;line-height: 10px;}
+
 .ft18{font: bold 8px 'Tahoma';color: #002060;line-height: 9px;}
 .ft19{font: 1px 'Tahoma';line-height: 6px;}
 .ft20{font: 1px 'Tahoma';line-height: 7px;}
@@ -50,7 +56,7 @@
 .p5{text-align: left;padding-left: 0px;}
 .p6{text-align: left;padding-left: 10px;white-space: nowrap;}
 .p7{text-align: center;white-space: nowrap;}
-.p8{text-align: right;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p8{text-align: left;padding-left: 9px;}
 .p9{text-align: left;padding-left: 44px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p10{text-align: right;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p11{text-align: right;padding-right: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
@@ -70,7 +76,6 @@
 .p25{text-align: center;padding-right: 43px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p26{text-align: right;padding-right: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p27{text-align: left;padding-left: 295px;margin-top: 500px;margin-bottom: 0px;}
-.p28{text-align: left;padding-left: 3px;margin-top: 500px;margin-bottom: 0px;}
 
 .td0{padding: 0px;margin: 0px;width: 100px; height: 25px; vertical-align: center;border: 1px solid black;}
 .td1{padding: 0px;margin: 0px;width: 100px;border: 1px solid black;}
@@ -80,21 +85,15 @@
 .td5{padding: 0px;margin: 0px;width: 10%;height: 17px;border: 1px solid black;}
 .td6{padding: 0px;margin: 0px;width: 250px; height: 26px;border: 1px solid black;}
 .td7{padding: 0px;margin: 0px;width: 60%;height: 17px;border: 1px solid black;}
-.td8{padding: 0px;margin: 0px;width: 19px;vertical-align: bottom;}
-.td9{padding: 0px;margin: 0px;width: 79px;vertical-align: bottom;}
-.td10{padding: 0px;margin: 0px;width: 168px;vertical-align: bottom;}
-.td11{padding: 0px;margin: 0px;width: 133px;vertical-align: bottom;}
-.td12{padding: 0px;margin: 0px;width: 327px;vertical-align: bottom;}
-.td13{padding: 0px;margin: 0px;width: 292px;vertical-align: bottom;}
+.td8{padding: 0px;margin: 0px;border: 2px solid black;}
 
 
 .tr2{height: 10px;}
-.tr3{height: 15px;}
-.tr4{height: 31px;}
-.tr5{height: 19px;}
+.tr3{height: 20px;}
+
 
 
 .t0{position:absolute;margin-left: 0px;margin-top: 15px; border: 2px solid black; border-collapse: separated;}
-.t1{position:absolute;margin-left: 2px;margin-top: 30px; }
+.t1{position:abosulte;margin-left: 2px;margin-top: 250px; }
 .t2{position:absolute;margin-left: 550px;margin-top: 130px; border: 2px solid black; border-collapse: separated;}
-.t3{position:absolute;width: 100%;margin-left: 0px;margin-top: 200px; border-collapse: collapse;}
+.t3{position:absolute;width: 100%;margin-left: 0px;margin-top: 10px; border-collapse: collapse;}
