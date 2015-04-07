@@ -26,8 +26,10 @@ class PdfController < ApplicationController
     		:file_name => "Cotizacion#{@order.id}.pdf",
       		:disposition => 'inline',
        		:stream => false,
-       		:disable_smart_shrinking=> true,
-    		:disable_pdf_compression=> true,
+       		#:disable_smart_shrinking=> true,
+    		#:disable_pdf_compression=> true,
+    		:margin_top => '0.5in',
+    		:margin_bottom => '0.5in',
     		:dpi =>'300'
       		
 	end

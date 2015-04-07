@@ -13,116 +13,69 @@
 
 
 
-<div class="div0 grad" ><P class="p1 ft1">COTIZACIÓN Nº <%= @order.id%></P></div>
+
+<div class="div0"><P class="p4 ft1">COMERCIAL V&P LTDA.</P></div>
+
+<div class="div1">	
+<P class="p1 ft2"> GIRO: COM. E INST. DE EQUIPOS Y SISTEMAS CONTRA INCEDIOS Y SEGURIDAD</P>
+</br>
+<P class="p0 ft2">LOS ABEDULES # 2145 B 3 D. 303</P>
+<P class="p0 ft2">OSORNO</P>
+<P class="p0 ft2">64 2 321112</P>
+<P class="p0 ft2">www.vypltda.cl</P>
+<P class="p0 ft2"><%= current_user.email%></P></TD>
+
+</div>
+<div class="div2" >
+	<P class="p0 ft4">R.U.T.: 76.524.770-5 </p>
+	<P class="p0 ft4">COTIZACIÓN</p> 
+	<P class="p0 ft4">Nº <%= @order.id%></P></div>
 <DIV class="img1">
 	<%= image_tag  "https://sistemavyp.herokuapp.com/assets/image001.png" %>
 </DIV>
-<TABLE class="t0">
-
-	
-	
-
-<TR>
-	<TD class="td0 grad"><P class="p2 ft2">NOMBRE :</P></TD>
-	<TD class="td6"><P class="p4 ft2">COMERCIAL V&P LTDA.</P></TD>
-	
-</TR>
-<TR>
-	<TD class="td0 grad"><P class="p2 ft2">R.U.T. :</P></TD>
-	<TD class="td6"><P class="p4 ft2">76.524.770-5</P></TD>
-	
-</TR>
-<TR>
-	<TD  class="td0 grad"><P class="p2 ft2">DIRECCIÒN :</P></TD>
-	<TD class="td6"><P class="p4 ft2">LOS ABEDULES # 2145 B 3 D. 303</P></TD>
-	
-</TR>
-<TR>
-	<TD  class="td0 grad"><P class="p2 ft2">GIRO:</P></TD>
-	<TD class="td6"><P class="p5 ft2">COM. E INST. DE EQUIPOS Y SISTEMAS CONTRA INCEDIOS Y SEGURIDAD</P></TD>
-	
-	
-</TR>
-
-
-<TR>
-	<TD class="td0 grad"><P class="p2 ft2">Ciudad :</P></TD>
-	<TD class="td6"><P class="p4 ft2">OSORNO</P></TD>
-
-</TR>
-</table>
-<table class="t2">
-	<tr>
-		<TD colspan=2 class="grad"><P class="p3 ft2">www.vypltda.cl</P></TD>
-	</tr>
-	<TR>
-
-	<TD class="td0 grad"><P class="p2 ft2">TELEFONO :</P></TD>
-	<TD class="td6 grad"><P class="p4 ft2">64 2 32 1112</P></TD>
-</TR>
-	<tr>
-		<TD class="td0 grad"><P class="p2 ft2">E-MAIL:</P></TD>
-		<TD  class="td6"><P class="p4 ft2"><%= current_user.email%></P></TD>
-
-</tr>
-</table>	
 
 <table class="t1">
-	<TR>
-
-	<TD colspan=5 class="tr3 grad2">
-
 	
+<TR>
+	<TD class="td1"><P class="p2 ft3">Nombre :</P></TD>
+
+	<TD class="td2"><P class="p6 ft6"><%=@order.name%></P></TD>
+	<TD class="td1"><P class="p2 ft3">Fecha :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.date%></P></TD>
+</TR>
+<TR>
+	<TD class="td1"><P class="p2 ft3">R.U.T :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.rut%></P></TD>
+	<TD class="td1"><P class="p2 ft3">Condición :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.sell_condition%></P></TD>
+</TR>
+<TR>
+	<TD class="td1"><P class="p2 ft3">Dirección :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.address%></P></TD>
+	<td colspan="2"></td>
 	
 </TR>
 <TR>
+	<TD class="td1"><P class="p2 ft3">Teléfono :</P></TD>
 
-	<TD colspan=2 class="grad2"><P class="p3 ft2">CLIENTE</P></TD>
-
-	<TD colspan=2 class="grad2"><P class="p3 ft2">Entrega</P></TD>
-	
+	<TD class="td2"><P class="p6 ft6"><%=@order.telephone%></P></TD>
+	<td colspan="2"></td>
 </TR>
 <TR>
-	<TD class="td1 grad2"><P class="p2 ft3">Nombre :</P></TD>
-
-	<TD class="td2"><P class="p6 ft3"><%=@order.name%></P></TD>
-	<TD class="td1 grad2"><P class="p2 ft3">Fecha :</P></TD>
-	<TD class="td2"><P class="p6 ft3"><%=@order.date%></P></TD>
-</TR>
-<TR>
-	<TD class="td1 grad2"><P class="p2 ft3">R.U.T :</P></TD>
-	<TD class="td2"><P class="p6 ft3"><%=@order.rut%></P></TD>
-	<TD class="td1 grad2"><P class="p2 ft3">Condición :</P></TD>
-	<TD class="td2"><P class="p6 ft3"><%=@order.sell_condition%></P></TD>
-</TR>
-<TR>
-	<TD class="td1 grad2"><P class="p2 ft3">Dirección :</P></TD>
-	<TD class="td2"><P class="p6 ft3"><%=@order.address%></P></TD>
-	<TD class="td1 grad2"><P class="p2 ft3">Atte. A :</P></TD>
-	<TD class="td2"><P class="p6 ft3"><%=@order.name%></P></TD>
-</TR>
-<TR>
-	<TD class="td1 grad2"><P class="p2 ft3">Teléfono :</P></TD>
-
-	<TD class="td2"><P class="p6 ft3"><%=@order.telephone%></P></TD>
+	<TD class="td1"><P class="p2 ft3">E-mail :</P></TD>
 	
-	
-</TR>
-<TR>
-	<TD class="td1 grad2"><P class="p2 ft3">E-mail :</P></TD>
-	
-	<TD class="td2"><P class="p6 ft3"><%=@order.email%></P></TD>
-	
+	<TD class="td2"><P class="p6 ft6"><%=@order.email%></P></TD>
+	<td colspan="2"></td>
 	</TR>
 
 </table>
 <table class="t3">
 <TR>
-	<TD class="td3"><P class="p3 ft5">Codigo</P></TD>
-	<TD class="td4"><P class="p3 ft5">DESCRIPCION</P></TD>
-	<TD class="td3"><P class="p3 ft5">CANTIDAD</P></TD>
-	<TD class="td3"><P class="p3 ft5">PRECIO UNIT.</P></TD>
-	<TD class="td3"><P class="p3 ft5">TOTAL</P></TD>
+	<TD class="td3"><P class="p3 ft3">Código</P></TD>
+	<TD class="td4"><P class="p3 ft3">Descripción</P></TD>
+	<TD class="td3"><P class="p3 ft3">Cantidad</P></TD>
+	<TD class="td3"><P class="p3 ft3">P. Unitario</P></TD>
+	<TD class="td3"><P class="p3 ft3">Total</P></TD>
 </TR>
 <% @order.order_items.each do |order_item| %>
 <tr class="tr2">
@@ -131,7 +84,7 @@
 	<TD class="td7"><P class="p5 ft6"><%= order_item.product.name%></P></TD>
 	<TD class="td5"><P class="p7 ft6"><%= order_item.quantity%></P></TD>
 	<TD class="td5"><P class="p7 ft6"><%= order_item.product.sell_price%></P></TD>
-	<TD class="td5"><P class="p7 ft6"><%= order_item.sell_total%></P></TD>
+	<TD class="td7"><P class="p7 ft6"><%= order_item.sell_total%></P></TD>
 </tr>
 <% end %> 
   
@@ -144,7 +97,7 @@
     <TD class="td7">
     <TD class="td5">
     <TD class="td5">
-    <TD class="td5">	
+    <TD class="td9">	
 </tr>
 <% i -=1%>
 <% end %> 
@@ -157,25 +110,25 @@
 
 <TR>
 	
-	<TD colspan=5 class="grad2 tr3 td8">
+	<TD colspan=5 class="tr3 td8">
 	
 </TR>
 <TR>
 	<TD colspan=2>
-	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">Neto</P></TD>
+	<TD colspan=2 class="td8"><P class="p8 ft5">Neto</P></TD>
 <TD class="td8"><P class="p7 ft5"><%= @order.sell_subtotal%></P></TD>
 </TR>
 	
 <TR>
 	<TD colspan=2>
-	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">Descuento <%= @order.discount%>%</P></TD>
+	<TD colspan=2 class="td8"><P class="p8 ft5">Descuento <%= @order.discount%>%</P></TD>
 <TD class="td8"><P class="p7 ft5"><%= @order.order_discount%></P></TD>
 </TR>
 
 <TR>
 	
 	<TD colspan=2>
-	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">Neto Final</P></TD>
+	<TD colspan=2 class="td8"><P class="p8 ft5">Neto Final</P></TD>
 	<TD class="td8"><P class="p7 ft5"><%= @order.subtotal_after_discount%></P></TD>
 	
 </TR>
@@ -183,7 +136,7 @@
 	
 	<TD colspan=2 >
 	
-	<TD colspan=2 class="td8 grad2"><P class="p8 ft5">IVA 19%</P></TD>
+	<TD colspan=2 class="td8"><P class="p8 ft5">IVA 19%</P></TD>
 	
 	<TD class="td8" ><P class="p7 ft5"><%= @order.tax%></P></TD>
 </TR>
@@ -195,9 +148,10 @@
 	
 </TR>
 </TABLE>
-<div  class="div2 grad2"><P class="ft8">Emitir Documento a Nombre de: Comercial V&P Ltda.</P></div>
+
 
 <div class="div3">
+<P class="ft8">Emitir Documento a Nombre de: Comercial V&P Ltda.</P>
 <P class="ft7">NOMBRE DEL VENDEDOR</P>
 <P class="ft7">Com. V&P Ltda.</P>
 <P class="ft7">Celular: 55614207</P>
