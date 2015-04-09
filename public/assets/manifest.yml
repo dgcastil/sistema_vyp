@@ -1,6 +1,10 @@
 ---
 image001.png: image001-31614d3a5877795a156b7164ebfa5be5.png
 application.js: application-bf660901f67daaf5c4cc5604ddafe816.js
+<<<<<<< HEAD
 application.css: application-a83f8192462966513c9f82cca26bf146.css
+=======
+application.css: application-17a24ac74a593b30da4a368270646600.css
+>>>>>>> 73006c71e5348cdc783cb551f2251341d965f730
 glyphicons-halflings-white.png: glyphicons-halflings-white-1ac2286640547e25db62657dba51238d.png
 glyphicons-halflings.png: glyphicons-halflings-21dd01ce9c61a1aa81d80f5acaad0e6d.png
