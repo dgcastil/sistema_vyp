@@ -24,14 +24,14 @@ class OrderItem < ActiveRecord::Base
     end
   end
 
-=begin
+
 
   def order_present
     if order.nil?
       errors.add(:order, "is not a valid order.")
     end
   end
-=end
+
 
 
 end

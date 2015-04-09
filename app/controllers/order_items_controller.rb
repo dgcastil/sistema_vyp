@@ -18,15 +18,15 @@ class OrderItemsController < ApplicationController
     
     
     respond_to do |format|
-      if @order.save
+     if @order.save
         format.html {redirect_to orders_path, notice: "Item ingresado"}
         format.js {}
         session[:order_id] = @order.id
         #format.json { render json: @order, status: :created, location: @order }
-      else
-        format.html { redirect_to orders_path, notice: "Error #{@order.errors}" }
-        #format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+     else
+       format.html { redirect_to orders_path, notice: "Error #{@order.errors}" }
+       #format.json { render json: @order.errors, status: :unprocessable_entity }
+     end
     end
       
          

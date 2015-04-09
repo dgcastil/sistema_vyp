@@ -1,7 +1,7 @@
 <div class="row">
 <div class="span6 offset3">
 <%= form_for(@product) do |f| %>
- <%= render 'shared/products_error_messages' %>
+<%= render 'shared/error_messages', object: f.object %>
 <%= f.label :code, "Código" %>
 <%= f.text_field :code %>
 <%= f.label :name, "Nombre" %>

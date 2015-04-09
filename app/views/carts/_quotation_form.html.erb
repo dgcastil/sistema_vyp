@@ -1,7 +1,7 @@
 <div class="row">
 <div class="span6 offset3">
 <%= form_for @order, :url => { :action => "create_quotation" } do |f| %>
-
+<%= render 'shared/error_messages', object: f.object %>
 <%= f.label :name, "Nombre Cliente" %>
 <%= f.text_field :name %>
 <%= f.label :rut, "RUT" %>
@@ -15,7 +15,7 @@
 <%= f.label :sell_condition, "Condición de venta" %>
 <%= f.text_field :sell_condition %>
 <%= f.label :date, "Fecha (DD-MM-AAAA)" %>
-<%= f.text_field :date %>
+<%= f.text_field :date, :value => @order.date.to_formatted_s(:dma) %>
 <%= f.label :discount, "Descuento" %>
 <%= f.text_field :discount %>
 <%= f.submit "Crear cotización", class: "btn btn-large btn-primary" %>
