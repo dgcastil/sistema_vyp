@@ -83,8 +83,8 @@
     <TD class="td5"><P class="p7 ft6"><%= order_item.product.code %></P></TD>
 	<TD class="td7"><P class="p5 ft6"><%= order_item.product.name%></P></TD>
 	<TD class="td5"><P class="p7 ft6"><%= order_item.quantity%></P></TD>
-	<TD class="td5"><P class="p7 ft6"><%= order_item.product.sell_price%></P></TD>
-	<TD class="td7"><P class="p7 ft6"><%= order_item.sell_total%></P></TD>
+	<TD class="td5"><P class="p7 ft6"><%= number_with_delimiter(order_item.product.sell_price, :delimiter => '.')%></P></TD>
+	<TD class="td7"><P class="p7 ft6"><%= number_with_delimiter(order_item.sell_total, :delimiter => '.')%></P></TD>
 </tr>
 <% end %> 
   
@@ -107,20 +107,20 @@
 <TR>
 	
 	<TD  class="td8"><P class="p8 ft3">Neto</P></TD>
-<TD class="td9"><P class="p7 ft6"><%= @order.sell_subtotal%></P></TD>
+<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@order.sell_subtotal, :delimiter => '.')%></P></TD>
 </TR>
 	
 <TR>
 	
 	<TD  class="td8"><P class="p8 ft3">Descuento <%= @order.discount%>%</P></TD>
-<TD class="td9"><P class="p7 ft6"><%= @order.order_discount%></P></TD>
+<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@order.order_discount, :delimiter => '.')%></P></TD>
 </TR>
 
 <TR>
 	
 	
 	<TD class="td8"><P class="p8 ft3">Neto Final</P></TD>
-	<TD class="td9"><P class="p7 ft6"><%= @order.subtotal_after_discount%></P></TD>
+	<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@order.subtotal_after_discount, :delimiter => '.')%></P></TD>
 	
 </TR>
 <TR>
@@ -129,13 +129,13 @@
 	
 	<TD class="td8"><P class="p8 ft3">IVA 19%</P></TD>
 	
-	<TD class="td9" ><P class="p7 ft6"><%= @order.tax%></P></TD>
+	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@order.tax, :delimiter => '.')%></P></TD>
 </TR>
 <TR>
 	
 
 	<TD class="td8"><P class="p22 ft3">Total: </P></TD>
-	<TD class="td9" ><P class="p7 ft6"><%= @order.total%></P></TD>
+	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@order.total, :delimiter => '.')%></P></TD>
 	
 </TR>
 </TABLE>
