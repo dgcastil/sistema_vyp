@@ -1,0 +1,22 @@
+<% provide(:title, 'Nueva Factura') %>
+<h1>Factura</h1>
+<div class="row">
+<div class="span6 offset3">
+<%= form_for(@factura) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.label :RUTRecep, "RUT" %>
+<%= f.text_field :RUTRecep %>
+<%= f.label :rznSocRecep, "Razon social"%>
+<%= f.text_field :rznSocRecep %>
+<%= f.label :giroRecep, "Giro" %>
+<%= f.text_field :giroRecep %>
+<%= f.label :dirRecep, "Dirección" %>
+<%= f.text_field :dirRecep %>
+<%= f.label :cmnaRecep, "Comuna" %>
+<%= f.text_field :cmnaRecep %>
+<%= f.label :ciudadRecep, "Ciudad" %>
+<%= f.text_field :ciudadRecep %>
+<%= f.submit "Crear Factura", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>

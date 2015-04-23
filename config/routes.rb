@@ -6,6 +6,7 @@ resources :sessions, only: [:new, :create, :destroy]
 resources :carts
 resources :pdf
 resources :order_items, only: [:new, :create, :update, :destroy]
+resources :facturas
 
 root to: 'static_pages#home'
 match '/help',to: 'static_pages#help'
@@ -20,6 +21,7 @@ match '/create_sell_order', to: 'carts#create_sell_order'
 match '/create_quotation', to: 'carts#create_quotation'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete
+match '/new_factura', to: 'facturas#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

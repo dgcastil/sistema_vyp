@@ -1,0 +1,4 @@
+class Factura < Documento
+  attr_accessible :IVA, :IVAOtrMnda, :RUTChofer, :RUTEmisor, :RUTMandante, :RUTRecep, :RUTSolicita, :RUTTrans, :TpoCambio, :acteco, :cdgSIISucur, :ciudadDest, :ciudadOrigen, :ciudadRecep, :cmnaDest, :cmnaOrigen, :cmnaRecep, :credEC, :dirDest, :dirOrigen, :dirRecep, :fchCancel, :fchVenc, :fechEmis, :fmaPago, :folio, :giroEmis, :giroRecep, :grntDep, :indServicio, :mntBase, :mntBruto, :mntCancel, :mntExe, :mntExeOtrMnda, :mntFaeCarneOtrMnda, :mntMargComOtrMnda, :mntMargenCom, :mntNeto, :mntNetoOtrMnda, :mntTotOtrMnda, :mntTotal, :montoNF, :nombreChofer, :patente, :rznSoc, :rznSocRecep, :saldoInsol, :tasaIVA, :tipoDespacho, :tpoMoneda_OtraMoneda, :version
+  has_many :detalle_facturas, dependent: :destroy
+end
