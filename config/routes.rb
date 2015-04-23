@@ -16,12 +16,13 @@ match '/order_items', to: 'order_items#new'
 match '/pdf', to: 'pdf#new'
 match '/create_pdf', to: 'pdf#create'
 match '/sell_order', to: 'carts#new_sell_order'
+match '/new_factura', to: 'facturas#new'
 match '/quotation', to: 'carts#new_quotation'
 match '/create_sell_order', to: 'carts#create_sell_order'
 match '/create_quotation', to: 'carts#create_quotation'
 match '/signin', to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete
-match '/new_factura', to: 'facturas#new'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
