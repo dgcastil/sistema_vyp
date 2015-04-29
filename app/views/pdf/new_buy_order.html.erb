@@ -1,0 +1,5 @@
+<h1>Vista previa</h1>
+
+<%= render 'pdf/buy_order'%>
+
+<%= link_to 'Generar', {:controller => "pdf", :action => "create_buy_order", :id => @buy_order.id}, class: "btn btn-large btn-primary" %>

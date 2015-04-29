@@ -19,17 +19,39 @@ class CartsController < ApplicationController
 
   def create_quotation
     @order=current_order
-    @order.update_attributes(params[:order])
+    @quotation=Quotation.new
+    @quotation.order_items=@order.order_items
+    @quotation.update_attributes(params[:order])
 
-    if @order.save
+    if @quotation.save
+          
 
+      render 'pdf/new_quotation'
+    else
+      redirect_to quotation_path
+    end
+  end
+
+  def new_buy_order
+    @order=current_order
+  end
+  
+
+  def create_buy_order
+      @order=current_order
+      @buy_order=BuyOrder.new
+      @buy_order.order_items=@order.order_items
+      @buy_order.update_attributes(params[:order])
+
+    if @buy_order.save
+      
       #flash[:success] = "Cotización generada"
     
       #redirect_to pdf_path @quotation
 
-      render 'pdf/new'
+      render 'pdf/new_buy_order'
     else
-      redirect_to quotation_path
+      redirect_to buy_order_path
     end
   end
 

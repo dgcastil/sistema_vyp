@@ -1,0 +1,26 @@
+<div class="row">
+<div class="span6 offset3">
+<%= form_for @order, :url => { :action => "create_buy_order" } do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.label :name, "Nombre Proveedor" %>
+<%= f.text_field :name %>
+<%= f.label :rut, "RUT" %>
+<%= f.text_field :rut %>
+<%= f.label :address, "Dirección" %>
+<%= f.text_field :address %>
+<%= f.label :email, "E-mail" %>
+<%= f.text_field :email %>
+<%= f.label :telephone, "Teléfono" %>
+<%= f.text_field :telephone %>
+<%= f.label :sell_condition, "Condición de venta" %>
+<%= f.text_field :sell_condition %>
+<%= f.label :date, "Fecha (DD-MM-AAAA)" %>
+<%= f.text_field :date, :value => @order.date.to_formatted_s(:dma) %>
+<%= f.label :discount, "Descuento" %>
+<%= f.text_field :discount %>
+<%= f.label :dispatch, "Despacho" %>
+<%= f.text_field :dispatch %>
+<%= f.submit "Crear orden de compra", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>

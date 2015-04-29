@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META http-equiv="X-UA-Compatible" content="IE=8">
+<TITLE>Cotización</TITLE>
+
+</HEAD>
+
+<BODY>
+<DIV id="page_1">
+<div class="div0"><P class="p4 ft1">COMERCIAL V&P LTDA.</P></div>
+
+<div class="div1">	
+<P class="p1 ft2">COM. E INST. DE EQUIPOS Y SISTEMAS CONTRA INCEDIOS Y SEGURIDAD</P>
+<P class="p0 ft2">LOS ABEDULES # 2145 B 3 D. 303</P>
+<P class="p0 ft2">OSORNO</P>
+<P class="p0 ft2">64 2 321112- (9) 5561 4207</P>
+<P class="p0 ft2">www.vypltda.cl</P>
+
+</div>
+<div class="div2" >
+	<P class="p0 ft4">R.U.T.: 76.406.548-4 </p>
+	<P class="p0 ft4">ORDEN DE COMPRA</p> 
+	<P class="p0 ft4">Nº <%= @buy_order.code%></P></div>
+<DIV class="img1">
+	<%= image_tag  "https://sistemavyp.herokuapp.com/assets/image001.png" %>
+</DIV>
+<div class="div3" >
+	<P class="p0 ft2"><%= current_user.email%></P></TD>
+	<P class="p0 ft2"><%= current_user.name.upcase%></P></TD> </div>
+<table class="t1">
+	
+<TR>
+	<TD class="td1"><P class="p2 ft3">Nombre :</P></TD>
+
+	<TD class="td2"><P class="p6 ft6"><%=@buy_order.name%></P></TD>
+	<TD class="td1"><P class="p2 ft3">Fecha :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@buy_order.date.to_formatted_s(:dma) %></P></TD>
+</TR>
+<TR>
+	<TD class="td1"><P class="p2 ft3">R.U.T :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@buy_order.rut%></P></TD>
+	<TD class="td1"><P class="p2 ft3">Condición :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@buy_order.sell_condition%></P></TD>
+</TR>
+<TR>
+	<TD class="td1"><P class="p2 ft3">Dirección :</P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@buy_order.address%></P></TD>
+	<td colspan="2"></td>
+	
+</TR>
+<TR>
+	<TD class="td1"><P class="p2 ft3">Teléfono :</P></TD>
+
+	<TD class="td2"><P class="p6 ft6"><%=@buy_order.telephone%></P></TD>
+	<td colspan="2"></td>
+</TR>
+<TR>
+	<TD class="td1"><P class="p2 ft3">E-mail :</P></TD>
+	
+	<TD class="td2"><P class="p6 ft6"><%=@buy_order.email%></P></TD>
+	<td colspan="2"></td>
+	</TR>
+
+</table>
+<table class="t3">
+<TR>
+	<TD class="td3"><P class="p3 ft3">Código</P></TD>
+	<TD class="td4"><P class="p3 ft3">Descripción</P></TD>
+	<TD class="td3"><P class="p3 ft3">Cantidad</P></TD>
+	<TD class="td3"><P class="p3 ft3">P. Unitario</P></TD>
+	<TD class="td3"><P class="p3 ft3">Total</P></TD>
+</TR>
+<% @buy_order.order_items.each do |order_item| %>
+<tr class="tr2">
+
+    <TD class="td5"><P class="p7 ft6"><%= order_item.product.code %></P></TD>
+	<TD class="td7"><P class="p5 ft6"><%= order_item.product.name%></P></TD>
+	<TD class="td5"><P class="p7 ft6"><%= order_item.quantity%></P></TD>
+	<TD class="td5"><P class="p7 ft6"><%= number_with_delimiter(order_item.product.buy_price, :delimiter => '.')%></P></TD>
+	<TD class="td7"><P class="p7 ft6"><%= number_with_delimiter(order_item.buy_total, :delimiter => '.')%></P></TD>
+</tr>
+<% end %> 
+  
+<% i =38%>
+<% count=@buy_order.order_items.count%>
+<% while i - count>0  do %>
+<tr>
+
+    <TD class="td5">
+    <TD class="td7">
+    <TD class="td5">
+    <TD class="td5">
+    <TD class="td7">	
+</tr>
+<% i -=1%>
+<% end %> 
+
+</table>
+<table class="t2">
+<TR>
+	
+	<TD  class="td8"><P class="p8 ft3">Neto</P></TD>
+<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@buy_order.buy_subtotal, :delimiter => '.')%></P></TD>
+</TR>
+	
+<TR>
+	
+	<TD  class="td8"><P class="p8 ft3">Descuento <%= @buy_order.discount%>%</P></TD>
+<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@buy_order.order_discount, :delimiter => '.')%></P></TD>
+</TR>
+
+<TR>
+	
+	
+	<TD class="td8"><P class="p8 ft3">Neto Final</P></TD>
+	<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@buy_order.subtotal_after_discount, :delimiter => '.')%></P></TD>
+	
+</TR>
+<TR>
+	
+
+	
+	<TD class="td8"><P class="p8 ft3">IVA 19%</P></TD>
+	
+	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@buy_order.tax, :delimiter => '.')%></P></TD>
+</TR>
+<TR>
+	
+
+	<TD class="td8"><P class="p22 ft3">Total: </P></TD>
+	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@buy_order.total, :delimiter => '.')%></P></TD>
+	
+</TR>
+</TABLE>
+
+
+
+<div class="div4">
+<P class="ft3">Emitir Factura a Nombre de: Comercial V&P Ltda.</P>
+<P class="ft7">Despachar por: <%=@buy_order.dispatch%></P>
+
+</div>
+</DIV>
+</BODY>
+</HTML>

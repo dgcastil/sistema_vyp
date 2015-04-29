@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150423025830) do
+ActiveRecord::Schema.define(:version => 20150423214236) do
 
   create_table "codigo_items", :force => true do |t|
     t.string   "tpoCodigo"
@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20150423025830) do
     t.integer  "code"
     t.date     "date"
     t.integer  "discount"
+    t.string   "dispatch"
   end
 
   create_table "products", :force => true do |t|
