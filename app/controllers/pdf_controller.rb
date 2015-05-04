@@ -41,12 +41,12 @@ class PdfController < ApplicationController
 		
 		session[:order_id]=nil
 	    html = render_to_string(:layout => false , :template => "pdf/_buy_order.html.erb")
-	    @order.destroy
+	    
 	    kit = PDFKit.new(html, :page_size => 'Letter')
 	    kit.stylesheets << "#{Rails.root}/public/assets/application.css"
 	  
 	    kit.to_file("#{Rails.root}/public/OrdenCompra#{@buy_order.id}.pdf")
-	 
+		@order.destroy	 
 	    send_file "#{Rails.root}/public/OrdenCompra#{@buy_order.id}.pdf",
      		:type => "application/pdf",
     		:file_name => "OrdenCompra#{@buy_order.id}.pdf",
