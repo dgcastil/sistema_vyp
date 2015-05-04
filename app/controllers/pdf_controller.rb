@@ -16,7 +16,7 @@ class PdfController < ApplicationController
 		@order=current_order
 		@order.destroy
 		session[:order_id]=nil
-	    html = render_to_string(:layout => false , :template => "pdf/_quotation.html.erb", :formats => :html)
+	    html = render_to_string(:layout => false , :template => "pdf/_quotation.html.erb")
 	    kit = PDFKit.new(html, :page_size => 'Letter')
 	    kit.stylesheets << "#{Rails.root}/public/assets/application.css"
 	  
@@ -38,9 +38,10 @@ class PdfController < ApplicationController
 	def create_buy_order
 		@buy_order = BuyOrder.find(params[:id])
 		@order=current_order
-		@order.destroy
+		
 		session[:order_id]=nil
-	    html = render_to_string(:layout => false , :template => "pdf/_buy_order.html.erb", :formats => :html)
+	    html = render_to_string(:layout => false , :template => "pdf/_buy_order.html.erb")
+	    @order.destroy
 	    kit = PDFKit.new(html, :page_size => 'Letter')
 	    kit.stylesheets << "#{Rails.root}/public/assets/application.css"
 	  

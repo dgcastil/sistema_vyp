@@ -1,10 +1,22 @@
-class BuyOrder < Order
-  attr_accessible :address, :email, :name, :rut, :sell_condition, :telephone, :date, :discount, :code, :dispatch
-  auto_increment
-	def order_discount
+class BuyOrder < ActiveRecord::Base
+  attr_accessible :address, :date, :discount, :dispatch, :email, :name, :rut, :sell_condition, :telephone
+  has_many :order_items, dependent: :destroy
+  after_initialize :init
+  
+					
+	def init
+	      self.discount  ||= 0.0 
+	      self.date ||= Date.current()          
+	end
+
+
+	def buy_subtotal
+	      order_items.collect { |oi| oi.valid? ? (oi.buy_total) : 0 }.sum
+	end
+		def order_discount
 		buy_subtotal*discount/100
 	end
-	
+
 	def subtotal_after_discount
 		buy_subtotal - order_discount
 	end

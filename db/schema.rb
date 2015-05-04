@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150423214236) do
+ActiveRecord::Schema.define(:version => 20150504042955) do
+
+  create_table "buy_orders", :force => true do |t|
+    t.string   "address"
+    t.string   "rut"
+    t.string   "name"
+    t.date     "date"
+    t.integer  "discount"
+    t.string   "telephone"
+    t.string   "sell_condition"
+    t.string   "dispatch"
+    t.string   "email"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "codigo_items", :force => true do |t|
     t.string   "tpoCodigo"
@@ -129,10 +143,12 @@ ActiveRecord::Schema.define(:version => 20150423214236) do
     t.integer  "product_id"
     t.integer  "order_id"
     t.integer  "quantity"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "buy_order_id"
   end
 
+  add_index "order_items", ["buy_order_id"], :name => "index_order_items_on_buy_order_id"
   add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"
   add_index "order_items", ["product_id"], :name => "index_order_items_on_product_id"
 

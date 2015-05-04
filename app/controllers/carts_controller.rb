@@ -42,6 +42,7 @@ class CartsController < ApplicationController
       @buy_order=BuyOrder.new
       @buy_order.order_items=@order.order_items
       @buy_order.update_attributes(params[:order])
+     
 
     if @buy_order.save
       
