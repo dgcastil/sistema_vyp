@@ -42,7 +42,7 @@ class PdfController < ApplicationController
 		session[:order_id]=nil
 	    html = render_to_string(:layout => false , :template => "pdf/_buy_order.html.erb")
 	    
-	    kit = PDFKit.new(html, :page_size => 'Letter',:margin_top => '0.1in',:margin_bottom => '0.1in')
+	    kit = PDFKit.new(html, :page_size => 'Letter')
 	    kit.stylesheets << "#{Rails.root}/public/assets/application.css"
 	  
 	    kit.to_file("#{Rails.root}/public/OrdenCompra#{@buy_order.id}.pdf")
