@@ -19,11 +19,8 @@ class CartsController < ApplicationController
 
   def create_quotation
     @order=current_order
-    @quotation=Quotation.new
-    @quotation.order_items=@order.order_items
-    @quotation.update_attributes(params[:order])
-
-    if @quotation.save
+    @order.update_attributes(params[:order])
+    if @order.save
           
 
       render 'pdf/new_quotation'

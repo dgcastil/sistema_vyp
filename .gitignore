@@ -15,3 +15,6 @@
 /tmp
 
 *.pdf
+*.xml
+/public/key.pem
+/public/certificate.cer

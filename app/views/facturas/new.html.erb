@@ -16,6 +16,19 @@
 <%= f.text_field :cmnaRecep %>
 <%= f.label :ciudadRecep, "Ciudad" %>
 <%= f.text_field :ciudadRecep %>
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="checkbox" autocomplete="off" id="check_expo"> Expo
+  </label>
+  <label class="btn btn-primary">
+    <input type="checkbox" autocomplete="off"> Checkbox 2
+  </label>
+  <label class="btn btn-primary">
+    <input type="checkbox" autocomplete="off"> Checkbox 3
+  </label>
+</div>
+<%= f.label :RUTChofer, "RUT Chofer", :class => "hidden" %>
+<%= f.text_field :RUTChofer, class: "hidden" %>
 <%= f.submit "Crear Factura", class: "btn btn-large btn-primary" %>
 <% end %>
 </div>

@@ -105,6 +105,10 @@ margin-bottom: 15px;
 @include box_sizing;
 
 }
+
+.hidden {
+	display: none;
+}
 #error_explanation {
 color: #f00;
 ul {

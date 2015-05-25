@@ -3,7 +3,7 @@ class PdfController < ApplicationController
 	before_filter :signed_in_user
 	def new_quotation
 
-    	@quotation = Quotation.find(params[:id])
+    	@order=current_order
 	end
 
 	def new_buy_order
@@ -12,19 +12,19 @@ class PdfController < ApplicationController
 	end
 
 	def create_quotation
-		@quotation = Quotation.find(params[:id])
+		
 		@order=current_order
-		@order.destroy
+		
 		session[:order_id]=nil
 	    html = render_to_string(:layout => false , :template => "pdf/_quotation.html.erb")
 	    kit = PDFKit.new(html, :page_size => 'Letter')
 	    kit.stylesheets << "#{Rails.root}/public/assets/application.css"
 	  
-	    kit.to_file("#{Rails.root}/public/Cotizacion#{@quotation.id}.pdf")
+	    kit.to_file("#{Rails.root}/public/Cotizacion#{@order.id}.pdf")
 	 
-	    send_file "#{Rails.root}/public/Cotizacion#{@quotation.id}.pdf",
+	    send_file "#{Rails.root}/public/Cotizacion#{@order.id}.pdf",
      		:type => "application/pdf",
-    		:file_name => "Cotizacion#{@quotation.id}.pdf",
+    		:file_name => "Cotizacion#{@order.id}.pdf",
       		:disposition => 'inline',
        		:stream => false,
        		#:disable_smart_shrinking=> true,

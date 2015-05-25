@@ -18,19 +18,19 @@ class Order < ActiveRecord::Base
 	end
 
 	def order_discount
-		raise "Not defined for #{self.class}"
+		sell_subtotal*discount/100
 	end
 
 	def subtotal_after_discount
-		raise "Not defined for #{self.class}"
+		sell_subtotal - order_discount
 	end
 
 	def tax
-		raise "Not defined for #{self.class}"
+		(subtotal_after_discount*0.19).round
 	end
 
 	def total
-		raise "Not defined for #{self.class}"
+		subtotal_after_discount+tax
 	end
 
 end

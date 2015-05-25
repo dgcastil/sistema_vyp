@@ -22,7 +22,7 @@
 <div class="div2" >
 	<P class="p0 ft4">R.U.T.: 76.406.548-4 </p>
 	<P class="p0 ft4">COTIZACIÓN</p> 
-	<P class="p0 ft4">Nº <%= @quotation.id%></P></div>
+	<P class="p0 ft4">Nº <%= @order.id%></P></div>
 <DIV class="img1">
 	<%= image_tag  "https://sistemavyp.herokuapp.com/assets/image001.png" %>
 </DIV>
@@ -34,32 +34,32 @@
 <TR>
 	<TD class="td1"><P class="p2 ft3">Nombre :</P></TD>
 
-	<TD class="td2"><P class="p6 ft6"><%=@quotation.name%></P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.name%></P></TD>
 	<TD class="td1"><P class="p2 ft3">Fecha :</P></TD>
-	<TD class="td2"><P class="p6 ft6"><%=@quotation.date.to_formatted_s(:dma) %></P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.date.to_formatted_s(:dma) %></P></TD>
 </TR>
 <TR>
 	<TD class="td1"><P class="p2 ft3">R.U.T :</P></TD>
-	<TD class="td2"><P class="p6 ft6"><%=@quotation.rut%></P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.rut%></P></TD>
 	<TD class="td1"><P class="p2 ft3">Condición :</P></TD>
-	<TD class="td2"><P class="p6 ft6"><%=@quotation.sell_condition%></P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.sell_condition%></P></TD>
 </TR>
 <TR>
 	<TD class="td1"><P class="p2 ft3">Dirección :</P></TD>
-	<TD class="td2"><P class="p6 ft6"><%=@quotation.address%></P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.address%></P></TD>
 	<td colspan="2"></td>
 	
 </TR>
 <TR>
 	<TD class="td1"><P class="p2 ft3">Teléfono :</P></TD>
 
-	<TD class="td2"><P class="p6 ft6"><%=@quotation.telephone%></P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.telephone%></P></TD>
 	<td colspan="2"></td>
 </TR>
 <TR>
 	<TD class="td1"><P class="p2 ft3">E-mail :</P></TD>
 	
-	<TD class="td2"><P class="p6 ft6"><%=@quotation.email%></P></TD>
+	<TD class="td2"><P class="p6 ft6"><%=@order.email%></P></TD>
 	<td colspan="2"></td>
 	</TR>
 
@@ -72,7 +72,7 @@
 	<TD class="td3"><P class="p3 ft3">P. Unitario</P></TD>
 	<TD class="td3"><P class="p3 ft3">Total</P></TD>
 </TR>
-<% @quotation.order_items.each do |order_item| %>
+<% @order.order_items.each do |order_item| %>
 <tr class="tr2">
 
     <TD class="td5"><P class="p7 ft6"><%= order_item.product.code %></P></TD>
@@ -84,7 +84,7 @@
 <% end %> 
   
 <% i =38%>
-<% count=@quotation.order_items.count%>
+<% count=@order.order_items.count%>
 <% while i - count>0  do %>
 <tr>
 
@@ -102,20 +102,20 @@
 <TR>
 	
 	<TD  class="td8"><P class="p8 ft3">Neto</P></TD>
-<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@quotation.sell_subtotal, :delimiter => '.')%></P></TD>
+<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@order.sell_subtotal, :delimiter => '.')%></P></TD>
 </TR>
 	
 <TR>
 	
-	<TD  class="td8"><P class="p8 ft3">Descuento <%= @quotation.discount%>%</P></TD>
-<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@quotation.order_discount, :delimiter => '.')%></P></TD>
+	<TD  class="td8"><P class="p8 ft3">Descuento <%= @order.discount%>%</P></TD>
+<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@order.order_discount, :delimiter => '.')%></P></TD>
 </TR>
 
 <TR>
 	
 	
 	<TD class="td8"><P class="p8 ft3">Neto Final</P></TD>
-	<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@quotation.subtotal_after_discount, :delimiter => '.')%></P></TD>
+	<TD class="td9"><P class="p7 ft6"><%= number_with_delimiter(@order.subtotal_after_discount, :delimiter => '.')%></P></TD>
 	
 </TR>
 <TR>
@@ -124,13 +124,13 @@
 	
 	<TD class="td8"><P class="p8 ft3">IVA 19%</P></TD>
 	
-	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@quotation.tax, :delimiter => '.')%></P></TD>
+	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@order.tax, :delimiter => '.')%></P></TD>
 </TR>
 <TR>
 	
 
 	<TD class="td8"><P class="p22 ft3">Total: </P></TD>
-	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@quotation.total, :delimiter => '.')%></P></TD>
+	<TD class="td9" ><P class="p7 ft6"><%= number_with_delimiter(@order.total, :delimiter => '.')%></P></TD>
 	
 </TR>
 </TABLE>

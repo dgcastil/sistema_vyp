@@ -159,6 +159,8 @@ GEM
       raindrops (~> 0.7)
     websocket (1.2.1)
     will_paginate (3.0.3)
+    xmldsig (0.2.7)
+      nokogiri
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -185,3 +187,4 @@ DEPENDENCIES
   uglifier (= 1.2.3)
   unicorn
   will_paginate (= 3.0.3)
+  xmldsig
